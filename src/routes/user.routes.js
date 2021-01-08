@@ -5,8 +5,6 @@ const User = require('../mongoDB/models/user');
 
 const auth = require('../middleware/auth');
 
-const { sendWelcomeMail } = require('../emails/account')
-
 router.post('/users/log-in', async (req, res) => {
     try {
         const user = await User.findByCredentials(req.body.email, req.body.password);
@@ -41,7 +39,6 @@ router.post('/create-user', async (req, res) => {
         user.save()
             .then(() => {
                 res.send(user)
-                sendWelcomeMail(user)
             })
             .catch((error) => {
                 res.status(400).send(error)
