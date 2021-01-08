@@ -1,2 +1,2 @@
-# easyCount-Backend
-NodeJS app that works with easyCount front-end Angular app
+# chatApp-Backend
+NodeJS app that works with chatApp front-end Angular app
